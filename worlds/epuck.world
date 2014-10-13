@@ -1,0 +1,88 @@
+# simple.world - basic world file example
+# Authors: Richard Vaughan
+# $Id$
+
+include "epuck-stage4.inc"
+include "map.inc"
+
+# time to pause (in GUI mode) or quit (in headless mode (-g)) the simulation
+quit_time 3600 # 1 hour of simulated time
+
+paused 1
+
+# spatial resolution of the underlying occupancy grid. Default is 0.02m.
+resolution 0.02
+
+# set the multiple of real time that Stage should try to achieve. Default is 1. 
+# set to 0 to go as fast as possible.
+speedup 3
+
+window
+(
+  size [ 600.000 600.000 ] # in pixels
+  scale 120.000   # pixels per meter
+  center [ 0  0 ]
+  rotate [ 0  0 ]
+  			
+  show_data 1
+)
+
+floorplan
+( 
+  name "cave"
+  size [4.000 4.000 0.200]
+  pose [0 0 0 0]
+  bitmap "bitmaps/cave.png"
+  obstacle_return 1
+  ranger_return 1
+  blob_return 1
+  gui_outline 0
+)
+
+epuck
+(
+  name "r0"
+  pose [ -1.5 -1.5 0 45.000 ]
+  localization "gps"
+  localization_origin [ 0 0 0 0 ]
+)
+
+epuck
+(     
+  name "r1"
+  pose [ -1.5 -1.25 0 45.000 ] 
+  localization "gps"
+  localization_origin [ 0 0 0 0 ]
+)
+
+epuck
+(     
+  name "r2"
+  pose [ -1.25 -1.25 0 45.000 ] 
+  localization "gps"
+  localization_origin [ 0 0 0 0 ]
+)
+
+epuck
+(     
+  name "r3"
+  pose [ -1.25 -1.5 0 45.000 ] 
+  localization "gps"
+  localization_origin [ 0 0 0 0 ]
+)
+
+epuck
+(     
+  name "r4"
+  pose [ -1.25 -1.00 0 45.000 ] 
+  localization "gps"
+  localization_origin [ 0 0 0 0 ]
+)
+
+epuck
+(     
+  name "r5"
+  pose [ -0.75 -1.25 0 45.000 ] 
+  localization "gps"
+  localization_origin [ 0 0 0 0 ]
+)

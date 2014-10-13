@@ -1,0 +1,88 @@
+# pioneer.world - basic world file example
+# Authors: Richard Vaughan
+# $Id$
+
+include "pioneer.inc"
+include "map.inc"
+
+# time to pause (in GUI mode) or quit (in headless mode (-g)) the simulation
+quit_time 3600 # 1 hour of simulated time
+
+paused 1
+
+# spatial resolution of the underlying occupancy grid. Default is 0.02m.
+resolution 0.02
+
+# set the multiple of real time that Stage should try to achieve. Default is 1. 
+# set to 0 to go as fast as possible.
+speedup 1 
+
+window
+(
+  size [ 635.000 666.000 ] # in pixels
+  scale 36.995   # pixels per meter
+  center [ -0.040  -0.274 ]
+  rotate [ 0  0 ]
+  			
+  show_data 1
+)
+
+floorplan
+( 
+  name "cave"
+  size [16.000 16.000 0.800]
+  pose [0 0 0 0]
+  bitmap "bitmaps/cave.png"
+  obstacle_return 1
+  ranger_return 1
+  blob_return 1
+  gui_outline 0
+)
+
+pioneer2dx
+(		  
+  name "r0"
+  pose [ -6.946 -6.947 0 45.000 ] 
+  localization "gps"
+  localization_origin [ 0 0 0 0 ]
+)
+
+pioneer2dx
+(     
+  name "r1"
+  pose [ -5.946 -6.947 0 45.000 ] 
+  localization "gps"
+  localization_origin [ 0 0 0 0 ]
+)
+
+pioneer2dx
+(     
+  name "r2"
+  pose [ -4.946 -6.947 0 45.000 ] 
+  localization "gps"
+  localization_origin [ 0 0 0 0 ]
+)
+
+pioneer2dx
+(     
+  name "r3"
+  pose [ -3.946 -6.947 0 45.000 ] 
+  localization "gps"
+  localization_origin [ 0 0 0 0 ]
+)
+
+pioneer2dx
+(     
+  name "r4"
+  pose [ -2.946 -6.947 0 45.000 ] 
+  localization "gps"
+  localization_origin [ 0 0 0 0 ]
+)
+
+pioneer2dx
+(     
+  name "r5"
+  pose [ -1.946 -6.947 0 45.000 ] 
+  localization "gps"
+  localization_origin [ 0 0 0 0 ]
+)

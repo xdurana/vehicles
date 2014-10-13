@@ -1,0 +1,42 @@
+# empty.world - empty world file
+# Authors: Xavier Duran
+# $Id$
+
+include "epuck-stage4.inc"
+include "pioneer.inc"
+include "empty.inc"
+include "vehicles.inc"
+include "objects.inc"
+
+# time to pause (in GUI mode) or quit (in headless mode (-g)) the simulation
+quit_time 3600 # 1 hour of simulated time
+
+paused 1
+
+# spatial resolution of the underlying occupancy grid. Default is 0.02m.
+resolution 0.02
+
+# set the multiple of real time that Stage should try to achieve. Default is 1. 
+# set to 0 to go as fast as possible.
+speedup 1
+
+window
+(
+  size [ 1024.000 1024.000 ] # in pixels
+  scale 56.000   # pixels per meter
+  center [ 0  0 ]
+  rotate [ 0  0 ]
+  			
+  show_data 1
+)
+
+floorplan
+( 
+  name "circle"
+  pose [0 0 0 0]
+  bitmap "bitmaps/empty.png"
+  size [8.000 8.000 0.200]
+  obstacle_return 1
+  ranger_return 1
+  blob_return 1
+  gui_outline 1
