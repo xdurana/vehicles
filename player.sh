@@ -1,4 +1,3 @@
 #!/bin/sh
 
-export LD_LIBRARY_PATH=/usr/local/lib64
-player worlds/empty.cfg
+player /home/xavier/vehicles/worlds/empty.cfg
